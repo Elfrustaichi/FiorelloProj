@@ -19,15 +19,10 @@ namespace Fiorello.Services.Dtos.Flower
 
         public string PosterImageUrl { get; set; }
 
-        public List<string> ImageUrls { get; set; }
+        public string CategoryName { get; set; }
 
-        public CategoryInFlowerGetAllDto CategoryInFlowerAll { get; set; }
+        
     }
 
-    public class CategoryInFlowerGetAllDto
-    {
-        public int Id { get; set; }
-
-        public string Name { get; set; }
-    }
+    
 }

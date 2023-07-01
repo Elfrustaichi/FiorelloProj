@@ -26,9 +26,12 @@ namespace Fiorello.Data.Repositories
             _context.SaveChanges();
         }
 
-        public void Remove(FlowerImage entity)
+        public void Remove(string imageName)
         {
+            var entity=_context.FlowerImages.FirstOrDefault(x=>x.ImageUrl==imageName);
+
             _context.FlowerImages.Remove(entity);
+
         }
     }
 }

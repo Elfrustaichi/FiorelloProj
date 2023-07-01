@@ -84,3 +84,4 @@ C:\Users\umid_\Desktop\ApiFinalProject\FiorelloApi\Fiorello.Api\bin\Debug\net6.0
 C:\Users\umid_\Desktop\ApiFinalProject\FiorelloApi\Fiorello.Api\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll
 C:\Users\umid_\Desktop\ApiFinalProject\FiorelloApi\Fiorello.Api\bin\Debug\net6.0\MicroElements.Swashbuckle.FluentValidation.dll
 C:\Users\umid_\Desktop\ApiFinalProject\FiorelloApi\Fiorello.Api\bin\Debug\net6.0\Fiorello.Api.staticwebassets.runtime.json
+C:\Users\umid_\Desktop\ApiFinalProject\FiorelloApi\Fiorello.Api\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

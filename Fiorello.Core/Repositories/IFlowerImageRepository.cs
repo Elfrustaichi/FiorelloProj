@@ -11,7 +11,7 @@ namespace Fiorello.Core.Repositories
     {
         public void Add(FlowerImage entity);
 
-        public void Remove(FlowerImage entity);
+        public void Remove(string imageName);
 
         public void Commit();
 

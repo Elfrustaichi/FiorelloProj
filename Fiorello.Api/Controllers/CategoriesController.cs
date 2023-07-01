@@ -1,11 +1,13 @@
 ﻿using Fiorello.Services.Dtos.Category;
 using Fiorello.Services.Dtos.Common;
 using Fiorello.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Fiorello.Api.Controllers
 {
+    [Authorize(Roles ="Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class CategoriesController : ControllerBase

@@ -47,6 +47,11 @@ namespace Fiorello.Services.Profiles
 
             //Flower Map start
             CreateMap<FlowerCreateDto, Flower>();
+            CreateMap<Flower, FlowerGetDto>()
+                .ForMember(dest => dest.PosterImageUrl, m => m.MapFrom(s => baseUrl + $"uploads/flowers/{s.FlowerImages.FirstOrDefault(x => x.PosterStatus == true).ImageUrl}"));
+            CreateMap<Flower, FlowerGetAllItemDto>()
+                .ForMember(dest => dest.PosterImageUrl, m => m.MapFrom(s => baseUrl + $"uploads/flowers/{s.FlowerImages.FirstOrDefault(x => x.PosterStatus == true).ImageUrl}"));
+            CreateMap<Category, CategoryInFlowerGetDto>();
             //Flower Map end
 
         }

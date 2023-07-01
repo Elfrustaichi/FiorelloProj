@@ -15,6 +15,6 @@ namespace Fiorello.Services.Interfaces
 
         public void RemoveImage(string ImageName);
 
-        public 
+        
     }
 }

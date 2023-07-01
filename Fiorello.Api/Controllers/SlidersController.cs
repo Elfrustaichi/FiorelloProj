@@ -2,11 +2,14 @@
 using Fiorello.Services.Dtos.Common;
 using Fiorello.Services.Dtos.Slider;
 using Fiorello.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Data;
 
 namespace Fiorello.Api.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class SlidersController : ControllerBase

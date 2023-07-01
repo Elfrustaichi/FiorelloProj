@@ -20,7 +20,7 @@ namespace Fiorello.Services.Dtos.Flower
 
         public List<string> ImageUrls { get; set;}
 
-        public CategoryInFlowerGetDto CategoryInFlower { get; set; }
+        public CategoryInFlowerGetDto Category { get; set; }
     }
 
     public class CategoryInFlowerGetDto

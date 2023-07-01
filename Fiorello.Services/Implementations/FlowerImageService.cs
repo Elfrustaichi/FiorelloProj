@@ -61,6 +61,8 @@ namespace Fiorello.Services.Implementations
         public void RemoveImage(string ImageName)
         {
             FileManager.Delete(_rootPath,"uploads/flowers", ImageName);
+            _flowerImageRepository.Remove(ImageName);
+            _flowerImageRepository.Commit();
         }
     }
 }

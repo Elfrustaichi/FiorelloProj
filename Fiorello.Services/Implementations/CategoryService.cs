@@ -4,6 +4,7 @@ using Fiorello.Core.Repositories;
 using Fiorello.Data.Repositories;
 using Fiorello.Services.Dtos.Category;
 using Fiorello.Services.Dtos.Common;
+using Fiorello.Services.Exceptions;
 using Fiorello.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -26,7 +27,7 @@ namespace Fiorello.Services.Implementations
         }
         public CreatedItemGetDto Create(CategoryCreateDto dto)
         {
-            if(_categoryRepository.IsExist(x=>x.Name==dto.Name)) throw new Exception();
+            if (_categoryRepository.IsExist(x => x.Name == dto.Name)) throw new RestException(HttpStatusCode.BadRequest,"Category not found");
 
             var entity = _mapper.Map<Category>(dto);
 
@@ -39,7 +40,7 @@ namespace Fiorello.Services.Implementations
 
         public void Delete(int id)
         {
-            if(!_categoryRepository.IsExist(x=>x.Id==id)) throw new Exception();
+            if (!_categoryRepository.IsExist(x => x.Id == id)) throw new RestException(HttpStatusCode.BadRequest, "Category not found");
 
             var entity=_categoryRepository.Get(x=>x.Id==id);
 
@@ -49,10 +50,10 @@ namespace Fiorello.Services.Implementations
 
         public CategoryGetDto Get(int id)
         {
-            if (!_categoryRepository.IsExist(x => x.Id == id)) throw new Exception();
+
+            if (!_categoryRepository.IsExist(x => x.Id == id)) throw new RestException(HttpStatusCode.BadRequest, "Category not found");
 
             var entity = _categoryRepository.Get(x => x.Id == id);
-
 
             var data = _mapper.Map<CategoryGetDto>(entity);
 
@@ -68,11 +69,15 @@ namespace Fiorello.Services.Implementations
 
         public void Update(int id, CategoryUpdateDto dto)
         {
-            if(!_categoryRepository.IsExist(x=>x.Id==id)) throw new Exception();
+            var entity = _categoryRepository.Get(x => x.Id == id);
 
-            var entity = _categoryRepository.Get(x=>x.Id==id);
+            List<RestExceptionError> errors = new List<RestExceptionError>();
 
-            if(dto.Name!=entity.Name&&_categoryRepository.IsExist(x=>x.Name==dto.Name)) throw new Exception();
+            if (!_categoryRepository.IsExist(x => x.Id == id)) errors.Add(new RestExceptionError("Id", "Category not found"));
+
+            if (dto.Name != entity.Name && _categoryRepository.IsExist(x => x.Name == dto.Name)) errors.Add(new RestExceptionError("Name", "Name already exist"));
+
+            if (errors.Count > 0) throw new RestException(HttpStatusCode.BadRequest,errors);
 
             entity.Name = dto.Name;
             _categoryRepository.Commit();

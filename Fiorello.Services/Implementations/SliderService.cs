@@ -4,6 +4,7 @@ using Fiorello.Core.Repositories;
 using Fiorello.Data.Repositories;
 using Fiorello.Services.Dtos.Common;
 using Fiorello.Services.Dtos.Slider;
+using Fiorello.Services.Exceptions;
 using Fiorello.Services.Helpers;
 using Fiorello.Services.Interfaces;
 using System;
@@ -27,7 +28,7 @@ namespace Fiorello.Services.Implementations
         }
         public CreatedItemGetDto Create(SliderCreateDto dto)
         {
-            if (_sliderRepository.IsExist(x => x.Title == dto.Title)) throw new Exception();
+            if (_sliderRepository.IsExist(x => x.Title == dto.Title)) throw new RestException(HttpStatusCode.BadRequest,"Title","Title already exist");
 
             var entity=_mapper.Map<Slider>(dto);
 
@@ -44,7 +45,7 @@ namespace Fiorello.Services.Implementations
 
         public void Delete(int id)
         {
-            if(!_sliderRepository.IsExist(x=>x.Id == id)) throw new Exception();
+            if (!_sliderRepository.IsExist(x => x.Id == id)) throw new RestException(HttpStatusCode.BadRequest,"Slider not found");
 
             var entity = _sliderRepository.Get(x=>x.Id==id);
 
@@ -58,7 +59,7 @@ namespace Fiorello.Services.Implementations
 
         public SliderGetDto Get(int id)
         {
-            if(!_sliderRepository.IsExist(x=>x.Id == id)) throw new Exception();
+            if(!_sliderRepository.IsExist(x=>x.Id == id)) throw new RestException(HttpStatusCode.BadRequest, "Slider not found");
 
             var entity=_sliderRepository.Get(x=>x.Id==id);
 
@@ -77,11 +78,11 @@ namespace Fiorello.Services.Implementations
 
         public void Update(int id, SliderUpdateDto dto)
         {
-            if (!_sliderRepository.IsExist(x => x.Id == id)) throw new Exception();
+            if (!_sliderRepository.IsExist(x => x.Id == id)) throw new RestException(HttpStatusCode.BadRequest, "Slider not found");
 
             var entity = _sliderRepository.Get(x => x.Id == id);
 
-            if(dto.Title!=entity.Title&&_sliderRepository.IsExist(x=>x.Title==dto.Title)) throw new Exception();
+            if (dto.Title != entity.Title && _sliderRepository.IsExist(x => x.Title == dto.Title)) throw new RestException(HttpStatusCode.BadRequest, "Title", "Title already exits");
 
             entity.Title = dto.Title;
             entity.Description = dto.Description;

@@ -1,0 +1,36 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\flowers\2331645d-0def-414f-aa4b-9dadf796f8001bfe1cbb-0aa6-48c7-ae48-4a79bee920151-1-524x617.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Fiorello.Api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Fiorello.Api</BasePath>
+      <RelativePath>uploads/flowers/2331645d-0def-414f-aa4b-9dadf796f8001bfe1cbb-0aa6-48c7-ae48-4a79bee920151-1-524x617.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\flowers\2331645d-0def-414f-aa4b-9dadf796f8001bfe1cbb-0aa6-48c7-ae48-4a79bee920151-1-524x617.png))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\flowers\26d3a50b-7beb-41db-b2f0-67dc85108c071bfe1cbb-0aa6-48c7-ae48-4a79bee920151-1-524x617.png))">
+      <SourceType>Package</SourceType>
+      <SourceId>Fiorello.Api</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Fiorello.Api</BasePath>
+      <RelativePath>uploads/flowers/26d3a50b-7beb-41db-b2f0-67dc85108c071bfe1cbb-0aa6-48c7-ae48-4a79bee920151-1-524x617.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath($(MSBuildThisFileDirectory)..\staticwebassets\uploads\flowers\26d3a50b-7beb-41db-b2f0-67dc85108c071bfe1cbb-0aa6-48c7-ae48-4a79bee920151-1-524x617.png))</OriginalItemSpec>
+    </StaticWebAsset>
+  </ItemGroup>
+</Project>
