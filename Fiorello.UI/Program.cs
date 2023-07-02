@@ -1,5 +1,9 @@
+using Fiorello.UI.Filters;
+using Microsoft.AspNetCore.Builder;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<AuthFilter>();
 
 builder.Services.AddControllersWithViews();
 

@@ -15,6 +15,7 @@ using FluentValidation;
 using FluentValidation.AspNetCore;
 using MicroElements.Swashbuckle.FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -128,6 +129,8 @@ builder.Services.AddScoped<IFlowerImageRepository,FlowerImageRepository>();
 builder.Services.AddScoped<IFlowerImageService,FlowerImageService>();
 builder.Services.AddScoped<IFlowerRepository,FlowerRepository>();
 builder.Services.AddScoped<IFlowerService,FlowerService>();
+builder.Services.AddScoped<IUserRepository,UserRepository>();
+builder.Services.AddScoped<IUserService,UserService>();
 builder.Services.AddScoped<JwtService>();
 //Added Services end
 
@@ -162,6 +165,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllers();
 

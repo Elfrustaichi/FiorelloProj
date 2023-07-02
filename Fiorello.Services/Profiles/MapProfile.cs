@@ -3,6 +3,7 @@ using Fiorello.Core.Entities;
 using Fiorello.Services.Dtos.Category;
 using Fiorello.Services.Dtos.Flower;
 using Fiorello.Services.Dtos.Slider;
+using Fiorello.Services.Dtos.User;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
@@ -53,6 +54,11 @@ namespace Fiorello.Services.Profiles
                 .ForMember(dest => dest.PosterImageUrl, m => m.MapFrom(s => baseUrl + $"uploads/flowers/{s.FlowerImages.FirstOrDefault(x => x.PosterStatus == true).ImageUrl}"));
             CreateMap<Category, CategoryInFlowerGetDto>();
             //Flower Map end
+
+            //User Map start
+            CreateMap<UserCreateDto, AppUser>();
+            CreateMap<AppUser,UserGetAllItemsDto>();
+            //User Map end
 
         }
     }

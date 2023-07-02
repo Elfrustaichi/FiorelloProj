@@ -1,0 +1,34 @@
+﻿@model UserCreateRequest
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <h1>Create</h1>
+        </div>
+        <div class="col-md-8">
+            <form asp-action="create" method="post">
+                <div class="form-group">
+                    <label asp-for="UserName">UserName</label>
+                    <input class="form-control" asp-for="UserName">
+                    <span class="text-danger" asp-validation-for="UserName"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Fullname">Fullname</label>
+                    <input class="form-control" asp-for="Fullname">
+                    <span class="text-danger" asp-validation-for="Fullname"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password">Password</label>
+                    <input type="password" class="form-control" asp-for="Password">
+                    <span class="text-danger" asp-validation-for="Password"></span>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+

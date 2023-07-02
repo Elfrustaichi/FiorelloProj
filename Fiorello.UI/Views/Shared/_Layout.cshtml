@@ -57,25 +57,25 @@
             </div>
             <!-- Nav Item - Tables -->
             <li class="nav-item">
-                <a class="nav-link" asp-action="index" asp-controller="brand">
+                <a class="nav-link" asp-action="index" asp-controller="flower">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Flowers</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-action="index" asp-controller="product">
+                <a class="nav-link" asp-action="index" asp-controller="category">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Categories</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-action="index" asp-controller="product">
+                <a class="nav-link" asp-action="index" asp-controller="slider">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Sliders</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" asp-action="index" asp-controller="product">
+                <a class="nav-link" asp-action="index" asp-controller="user">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Users</span>
                 </a>
@@ -352,7 +352,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" asp-action="logout" asp-controller="account">Logout</a>
                 </div>
             </div>
         </div>
